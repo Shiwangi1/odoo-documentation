@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Odoo 11 Installation - MkLorum</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Odoo 11 Installation";
+    var mkdocs_page_input_path = "installation.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> MkLorum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Odoo 11 Installation</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#source-code-install-on-windows">Source Code Install on Windows</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">MkLorum</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Odoo 11 Installation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="source-code-install-on-windows"><strong>Source Code Install on Windows</strong></h3>
+<p>For installing the source we have to install the dependencies manually.</p>
+<ul>
+<li>
+<p><strong>Python 3.5</strong> : Use <a href="https://www.python.org/downloads/windows/">The official Python 3 installer</a>. While installing check the checkbox for "add python.exe to Path". <br/>  Note: Please ensure that you are installing <strong>Python 3.5</strong> otherwise it will create problem in later stages. <br/> <br/></p>
+</li>
+<li>
+<p><strong>PostgreSQL</strong> : This will be our local database. Use <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">PostgreSQL for windows</a>. <br/>
+After installation go to your environment variable and add PostgreSQL's <strong>bin</strong> directory to your <strong>PATH</strong>( default :C:\ProgramFiles\PostgreSQL\9.4\bin ).<br/> Now we have to create one postgres user: by default the only user is <strong>postgres</strong>. For creating a postgres user with a password go to your start <strong>menu</strong>-&gt; <strong>search pgAdmin III</strong> -&gt; <strong>double-click the server</strong>. After this select <strong>Edit</strong> -&gt;<strong>New Object</strong>-&gt;<strong>New Login Role</strong>, give the username in the role name field(<strong>odoo</strong>), then open the definition tab and enter the password (<strong>Odoo</strong>), then click OK. <br/> <br/></p>
+</li>
+<li>
+<p><strong>Fetch the sources</strong> : It is always good to download the sorce from git repository. For community edition go to <a href="https://github.com/odoo/odoo.git">github</a>. <br/> 
+        * Install Git <br/>
+        * After installing git go to your local system. Do right click and choose git bash here. One cmd window will pop up type <strong>git clone https://github.com/odoo/odoo.git</strong> <br/> <br/></p>
+</li>
+<li>
+<p><strong>Install psycopg</strong> : For installing go to <a href="http://www.stickpeople.com/projects/python/win-psycopg/">http://www.stickpeople.com/projects/python/win-psycopg/</a>. 
+<br/> Note:Choose the one which is compatible with Python 3.5. <br/> <br/></p>
+</li>
+<li>
+<p><strong>Python Dependencies</strong> : Now that we have cloned the odoo source code go to the source code in your local system there we will be able to see one <strong>requirements.txt</strong> file. In this file all the dependencies are listed.<br/> For installing the dependencies type cmd in file path where you have cloned the odoo. Now one cmd window will open with address of your odoo path. type 
+<strong>pip.exe install -r requirements.txt</strong> <br/>
+ex: <br/>
+    <code>C:\&gt; cd \YourOdooPath</code> <br/>
+    <code>C:\YourOdooPath&gt;pip.exe install -r requirements.txt</code> <br/> Note : While the given command is running please make sure all the dependencies listed in the requirements.txt file are installing properly. If any error is coming while installing any particular dependencies please try to install it separately. </p>
+<p>After all these if still some errors are coming try with <br/> <strong>pip.exe install -r requirements.txt  --force --upgrade</strong> <br/> <br/></p>
+</li>
+<li>
+<p><strong>Install Less CSS via nodejs</strong> : First install nodejs(<a href="https://nodejs.org/en/download/">install nodejs,</a>). <br/>After that go to cmd type <strong>npm install -g Less</strong>
+   <code>C:\&gt; npm install -g less</code> <br/>Note: After doing all the above steps please restart your laptop. <br/>Now all the setup has been done. <br/> <br/></p>
+</li>
+<li>
+<p><strong>Running Odoo</strong> : Go to your odoo source code. Open cmd on your odoo path and type below command <br/>
+    <code>python odoo-bin -w odoo -r odoo --addons-path=addons  --db-filter=mydb$</code> <br/>Where <strong>odoo</strong>,<strong>odoo</strong> are the postgres login and password that we have created and <strong>mydb</strong> is the default db that serve on <strong>localhost:8069</strong></p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

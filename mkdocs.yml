@@ -1,0 +1,5 @@
+site_name: MkLorum
+pages:
+    - Home: index.md
+    - Odoo 11 Installation: installation.md
+theme: readthedocs    
